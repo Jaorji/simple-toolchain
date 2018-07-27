@@ -26,6 +26,10 @@
             "description": "The bluemix space",
             "type": "string"
         },
+        "prod-namespace": {
+            "description": "The bluemix space",
+            "type": "string"
+        },
         "api-key": {
             "description": "API key description",
             "type": "string"
@@ -43,6 +47,7 @@
         "prod-organization",
         "prod-space",
         "prod-app-name",
+        "prod-namespace",
         "api-key"
     ],
     "form": [
@@ -66,12 +71,13 @@
         },
         {
             "type": "table",
-            "columnCount": 4,
+            "columnCount": 5,
             "widths": [
                 "15%",
                 "28%",
-                "28%",
-                "28%"
+                "20%",
+                "20%",
+                "16%"
             ],
             "items": [
                 {
@@ -103,12 +109,23 @@
                     }
                 },
                 {
+                    "type": "label",
+                    "title": {
+                        "$ref": "#/messages/prodStage"
+                    }
+                },
+                {
                     "type": "select",
                     "key": "prod-region"
                 },
                 {
                     "type": "select",
                     "key": "prod-organization"
+                },
+                {
+                    "type": "select",
+                    "key": "prod-space",
+                    "readonly": false
                 },
                 {
                     "type": "select",
