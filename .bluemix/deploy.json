@@ -129,7 +129,7 @@
                 },
                 {
                     "type": "select",
-                    "key": "prod-space",
+                    "key": "prod-namespace",
                     "readonly": false
                 }
             ]
