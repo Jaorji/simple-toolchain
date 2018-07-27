@@ -132,7 +132,7 @@
             "type": "select",
             "readonly": false,
             "title": "test",
-            "key": "prod-space"
+            "key": "prod-namespace"
         }
     ]
 }
