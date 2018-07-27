@@ -75,9 +75,8 @@
             "widths": [
                 "15%",
                 "28%",
-                "20%",
-                "20%",
-                "16%"
+                "28%",
+                "28%"
             ],
             "items": [
                 {
@@ -126,13 +125,14 @@
                     "type": "select",
                     "key": "prod-space",
                     "readonly": false
-                },
-                {
-                    "type": "select",
-                    "key": "prod-namespace",
-                    "readonly": false
                 }
             ]
+        },
+        {
+            "type": "select",
+            "readonly": false,
+            "title": "test",
+            "key": "prod-space"
         }
     ]
 }
