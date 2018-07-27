@@ -26,9 +26,13 @@
             "description": "The bluemix space",
             "type": "string"
         },
-        "prod-namespace": {
-            "description": "The bluemix space",
+        "registery-namespace": {
+            "description": "The bluemix namespace",
             "type": "string"
+        },
+        "registery-cluster-name":{
+            "description": "The bluemix cluster name",
+            "type":"string"
         },
         "api-key": {
             "description": "API key description",
@@ -47,7 +51,8 @@
         "prod-organization",
         "prod-space",
         "prod-app-name",
-        "prod-namespace",
+        "registery-namespace",
+        "registery-cluster-name",
         "api-key"
     ],
     "form": [
@@ -131,8 +136,14 @@
         {
             "type": "select",
             "readonly": false,
-            "title": "test",
-            "key": "prod-namespace"
+            "title": "name space",
+            "key": "registery-namespace"
+        },
+        {
+            "type": "select",
+            "readonly": false,
+            "title": "cluster name",
+            "key": "registery-cluster-name"
         }
     ]
 }
