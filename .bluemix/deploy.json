@@ -58,7 +58,7 @@
     "form": [
         {
             "type": "validator",
-            "url": "/devops/setup/bm-helper/custom-helper.html"
+            "url": "/devops/setup/bm-helper/helper.html"
         },
         {
             "type": "text",
