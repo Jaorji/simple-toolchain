@@ -26,6 +26,18 @@
             "description": "The bluemix space",
             "type": "string"
         },
+	    "ji-cs-region": {
+            "description": "The bluemix region",
+            "type": "string"
+        },
+        "ji-organization": {
+            "description": "The bluemix org",
+            "type": "string"
+        },
+        "ji-space": {
+            "description": "The bluemix space",
+            "type": "string"
+        },
         "registry-namespace": {
             "description": "The bluemix namespace",
             "type": "string"
@@ -167,15 +179,15 @@
                 },
                 {
                     "type": "select",
-                    "key": "prod-region"
+                    "key": "ji-cs-region"
                 },
                 {
                     "type": "select",
-                    "key": "prod-organization"
+                    "key": "ji-organization"
                 },
                 {
                     "type": "select",
-                    "key": "prod-space",
+                    "key": "ji-space",
                     "readonly": false
                 }
             ]
