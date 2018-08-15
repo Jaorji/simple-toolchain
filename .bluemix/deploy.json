@@ -165,7 +165,7 @@
                 {
                     "type": "label",
                     "title": {
-                        "$ref": "#/messages/prodStage"
+                        "$ref": "#/messages/jiStage"
                     }
                 },
                 {
