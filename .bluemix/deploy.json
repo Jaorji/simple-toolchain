@@ -182,7 +182,7 @@
                     "readonly": false
                 }
             ]
-        }
+        },
         {
             "type": "select",
             "readonly": false,
