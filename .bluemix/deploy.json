@@ -88,12 +88,11 @@
         },
         {
             "type": "table",
-            "columnCount": 5,
+            "columnCount": 3,
             "widths": [
-                "15%",
-                "28%",
-                "28%",
-                "28%"
+                "33%",
+                "33%",
+                "33%"
             ],
             "items": [
                 {
@@ -141,12 +140,11 @@
         },
 	      {
             "type": "table",
-            "columnCount": 5,
+            "columnCount": 3,
             "widths": [
-                "15%",
-                "28%",
-                "28%",
-                "28%"
+                "33%",
+                "33%",
+                "33%"
             ],
             "items": [
                 {
