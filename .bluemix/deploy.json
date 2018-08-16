@@ -177,7 +177,7 @@
                 },
                 {
                     "type": "select",
-                    "key": "ji-cs-region"
+                    "key": "ji-region"
                 },
                 {
                     "type": "select",
