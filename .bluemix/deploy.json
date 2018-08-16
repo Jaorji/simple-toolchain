@@ -42,7 +42,7 @@
             "description": "The bluemix region",
             "type": "string"
 		    
-	}
+	},
 
         "registry-namespace": {
             "description": "The bluemix namespace",
