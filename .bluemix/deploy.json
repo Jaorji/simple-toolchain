@@ -68,7 +68,7 @@
         "prod-region",
         "prod-organization",
         "prod-space",
-	"ji-cs-region",
+	"ji-region",
 	"ji-organization",
 	"ji-space",
 	"test-cs-region",
