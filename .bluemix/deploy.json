@@ -96,6 +96,12 @@
 	        "title": "IBM Cloud API Key",
 	        "key": "api-key"
         },
+	       {
+            "type": "select",
+            "readonly": false,
+            "title": "cs region",
+            "key": "test-cs-region"
+        },
         {
             "type": "table",
             "columnCount": 4,
@@ -190,12 +196,7 @@
                 }
             ]
         },
-	   {
-            "type": "select",
-            "readonly": false,
-            "title": "cs region",
-            "key": "test-cs-region"
-        },
+	
         {
             "type": "select",
             "readonly": false,
