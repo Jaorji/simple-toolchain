@@ -216,7 +216,7 @@
 	{
             "type": "select",       
             "title": "cs region",
-            "key": "test-cs-region"
+            "key": "test-cs-region",
              "$populate":{
 	         "name":"getCSRegions"
              }
