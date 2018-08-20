@@ -136,16 +136,28 @@
                 },
                 {
                     "type": "select",
-                    "key": "prod-region"
+                    "key": "prod-region",
+		    "$populate":{
+			"name":"getCFRegions"
+		    }
+			
                 },
                 {
                     "type": "select",
-                    "key": "prod-organization"
+                    "key": "prod-organization",
+		    "$populate":{
+			"name": "getCFOrganization",
+			"params": "prd-region"
+		    }
                 },
                 {
                     "type": "select",
                     "key": "prod-space",
-                    "readonly": false
+                    "readonly": false,
+		    "$populate":{
+			"name": "getCFSpace",
+			"params": "prd-region"
+		    }
                 },
 		     {
                     "type": "label",
@@ -177,37 +189,58 @@
                 },
                 {
                     "type": "select",
-                    "key": "ji-region"
+                    "key": "ji-region",
+	            "$populate":{
+			"name":"getCFRegions"
+		    }
                 },
                 {
                     "type": "select",
-                    "key": "ji-organization"
+                    "key": "ji-organization",
+	            "$populate":{
+			"name": "getCFOrganization",
+			"params": "ji-region"
+		    }
                 },
                 {
                     "type": "select",
                     "key": "ji-space",
-                    "readonly": false
+                    "readonly": false,
+	            "$populate":{
+			"name": "getCFSpace",
+			"params": "ji-region"
+		    }
                 }
             ]
         },
-	       {
-            "type": "select",
-       
+	{
+            "type": "select",       
             "title": "cs region",
             "key": "test-cs-region"
+             "$populate":{
+	         "name":"getCSRegions"
+             }
         },
 	
         {
             "type": "select",
             "readonly": false,
             "title": "name space",
-            "key": "registry-namespace"
+            "key": "registry-namespace",
+	    "$populate":{
+	        "name": "getCSNameSpace",
+	        "params": "test-cs-region"
+             }
         },
         {
             "type": "select",
             "readonly": false,
             "title": "cluster name",
-            "key": "registry-cluster-name"
+            "key": "registry-cluster-name",
+	    "$populate":{
+	        "name": "getCSClusterName",
+	        "params": "test-cs-region"
+             }
         }
     ]
 }
