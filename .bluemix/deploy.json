@@ -229,7 +229,7 @@
             "key": "registry-namespace",
 	    "$populate":{
 	        "name": "getCSNameSpace",
-	        "params": "test-cs-region"
+	        "params": "test-region"
              }
         },
         {
