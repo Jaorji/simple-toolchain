@@ -239,7 +239,7 @@
             "key": "registry-cluster-name",
 	    "$populate":{
 	        "name": "getCSClusterName",
-	        "params": "test-cs-region"
+	        "params": "test-region"
              }
         }
     ]
