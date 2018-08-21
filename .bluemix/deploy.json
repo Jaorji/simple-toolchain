@@ -156,7 +156,7 @@
                     "readonly": false,
 		    "$populate":{
 			"name": "getCFSpace",
-			"params": "prd-region"
+			"params": "prd-organization"
 		    }
                 },
 		     {
@@ -208,7 +208,7 @@
                     "readonly": false,
 	            "$populate":{
 			"name": "getCFSpace",
-			"params": "ji-region"
+			"params": "ji-organization"
 		    }
                 }
             ]
