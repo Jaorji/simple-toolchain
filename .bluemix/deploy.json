@@ -18,12 +18,12 @@
             "description": "The bluemix region",
             "type": "string"
         },
-        "prod-organization": {
-            "description": "The bluemix org",
-            "type": "string"
-        },
         "prod-space": {
             "description": "The bluemix space",
+            "type": "string"
+        },
+        "prod-organization": {
+            "description": "The bluemix org",
             "type": "string"
         },
 	    "ji-region": {
