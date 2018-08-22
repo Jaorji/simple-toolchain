@@ -119,13 +119,13 @@
                 {
                     "type": "label",
                     "title": {
-                        "$ref": "#/messages/organization"
+                        "$ref": "#/messages/space"
                     }
                 },
-                {
+		{
                     "type": "label",
                     "title": {
-                        "$ref": "#/messages/space"
+                        "$ref": "#/messages/organization"
                     }
                 },
                 {
@@ -144,14 +144,6 @@
                 },
                 {
                     "type": "select",
-                    "key": "prod-organization",
-		    "$populate":{
-			"name": "getCFOrganization",
-			"params": {"region":"prod-region"}
-		    }
-                },
-                {
-                    "type": "select",
                     "key": "prod-space",
                     "readonly": false,
 		    "$populate":{
@@ -159,7 +151,15 @@
 			"params": {"organization":"prod-organization","region":"prod-region"}
 		    }
                 },
-		     {
+		       {
+                    "type": "select",
+                    "key": "prod-organization",
+		    "$populate":{
+			"name": "getCFOrganization",
+			"params": {"region":"prod-region"}
+		    }
+                },
+		{
                     "type": "label",
                     "title": ""
                 },
