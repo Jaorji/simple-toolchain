@@ -147,7 +147,7 @@
                     "key": "prod-organization",
 		    "$populate":{
 			"name": "getCFOrganization",
-			"params": "prod-region"
+			"params": {"region":"prod-region"}
 		    }
                 },
                 {
@@ -156,7 +156,7 @@
                     "readonly": false,
 		    "$populate":{
 			"name": "getCFSpace",
-			"params": "prod-organization"
+			"params": {"organization":"prod-organization","region":"prod-region"}
 		    }
                 },
 		     {
@@ -199,7 +199,7 @@
                     "key": "ji-organization",
 	            "$populate":{
 			"name": "getCFOrganization",
-			"params": "ji-region"
+			"params": {"region":"ji-region"}
 		    }
                 },
                 {
@@ -208,7 +208,7 @@
                     "readonly": false,
 	            "$populate":{
 			"name": "getCFSpace",
-			"params": "ji-organization"
+			"params": {"organization":"ji-organization","region":"ji-region"}
 		    }
                 }
             ]
@@ -229,7 +229,7 @@
             "key": "registry-namespace",
 	    "$populate":{
 	        "name": "getCSNameSpace",
-	        "params": "test-region"
+	        "params": {"region":"test-region"}
              }
         },
         {
@@ -239,7 +239,7 @@
             "key": "registry-cluster-name",
 	    "$populate":{
 	        "name": "getCSClusterName",
-	        "params": "test-region"
+	        "params": {"region":"test-region"}
              }
         }
     ]
