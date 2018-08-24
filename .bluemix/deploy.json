@@ -46,11 +46,17 @@
 
         "registry-namespace": {
             "description": "The bluemix namespace",
-            "type": "string"
+            "type": "string",
+            "$validate":{
+		    "params":{"region":"test-region"}
+	    }
         },
         "registry-cluster-name":{
             "description": "The bluemix cluster name",
-            "type":"string"
+            "type":"string",
+	    "$validate":{
+		    "params":{"region":"test-region"}
+	    }
         },
         "api-key": {
             "description": "API key description",
