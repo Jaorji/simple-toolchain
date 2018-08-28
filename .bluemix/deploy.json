@@ -144,7 +144,7 @@
                     "type": "select",
                     "key": "prod-region",
 		    "$populate":{
-			"name":"getCFRegions"
+			"method":"getCFRegions"
 		    }
 			
                 },
@@ -152,7 +152,7 @@
                     "type": "select",
                     "key": "prod-organization",
 		    "$populate":{
-			"name": "getCFOrganization",
+			"method": "getCFOrganization",
 			"params": {"region":"prod-region"}
 		    }
                 },
@@ -161,7 +161,7 @@
                     "key": "prod-space",
                     "readonly": false,
 		    "$populate":{
-			"name": "getCFSpace",
+			"method": "getCFSpace",
 			"params": {"organization":"prod-organization","region":"prod-region"}
 		    }
                 },
@@ -197,14 +197,14 @@
                     "type": "select",
                     "key": "ji-region",
 	            "$populate":{
-			"name":"getCFRegions"
+			"method":"getCFRegions"
 		    }
                 },
                 {
                     "type": "select",
                     "key": "ji-organization",
 	            "$populate":{
-			"name": "getCFOrganization",
+			"method": "getCFOrganization",
 			"params": {"region":"ji-region"}
 		    }
                 },
@@ -213,7 +213,7 @@
                     "key": "ji-space",
                     "readonly": false,
 	            "$populate":{
-			"name": "getCFSpace",
+			"method": "getCFSpace",
 			"params": {"organization":"ji-organization","region":"ji-region"}
 		    }
                 }
@@ -224,7 +224,7 @@
             "title": "cs region",
             "key": "test-region",
              "$populate":{
-	         "name":"getCSRegions"
+	         "method":"getCSRegions"
              }
         },
 	
@@ -234,7 +234,7 @@
             "title": "name space",
             "key": "registry-namespace",
 	    "$populate":{
-	        "name": "getCSNameSpace",
+	        "method": "getCSNameSpace",
 	        "params": {"region":"test-region"}
              }
         },
@@ -244,7 +244,7 @@
             "title": "cluster name",
             "key": "registry-cluster-name",
 	    "$populate":{
-	        "name": "getCSClusterName",
+	        "method": "getCSClusterName",
 	        "params": {"region":"test-region"}
              }
         }
