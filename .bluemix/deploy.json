@@ -16,31 +16,57 @@
     "properties": {
         "prod-region": {
             "description": "The bluemix region",
-            "type": "string"
+            "type": "string",
+	    "$validate":{
+		   "method":"validateCFRegions"
+	    }
+	    
         },
         "prod-space": {
             "description": "The bluemix space",
-            "type": "string"
+            "type": "string",
+	    "$validate":{
+		   "method":"validateCFSpaces",
+		   "params":{"region":"prod-region"}
+	    }
         },
         "prod-organization": {
             "description": "The bluemix org",
-            "type": "string"
+            "type": "string",
+	    "$validate":{
+		   "method":"validateCFOrganizations",
+		   "params":{"region":"prod-region"}
+	    }
         },
 	    "ji-region": {
             "description": "The bluemix region",
-            "type": "string"
+            "type": "string",
+	    "$validate":{
+		   "method":"validateCFRegions"
+	    }
         },
         "ji-organization": {
             "description": "The bluemix org",
-            "type": "string"
+            "type": "string",
+	    "$validate":{
+		   "method":"validateCFOrganizations",
+		   "params":{"region":"ji-region"}
+	    }
         },
         "ji-space": {
             "description": "The bluemix space",
-            "type": "string"
+            "type": "string",
+	    "$validate":{
+		   "method":"validateCFSpaces",
+		   "params":{"region":"ji-region"}
+	    }
         },
 	"test-region":{
             "description": "The bluemix region",
-            "type": "string"
+            "type": "string",
+	    "$validate":{
+		    "method":"validateCSRegions"
+	    }
 		    
 	},
 
@@ -55,6 +81,7 @@
             "description": "The bluemix cluster name",
             "type":"string",
 	    "$validate":{
+		    "method":"validateCSClusterNames"
 		    "params":{"region":"test-region"}
 	    }
         },
@@ -144,7 +171,7 @@
                     "type": "select",
                     "key": "prod-region",
 		    "$populate":{
-			"method":"getCFRegions"
+			"method":"populateCFRegions"
 		    }
 			
                 },
@@ -152,7 +179,7 @@
                     "type": "select",
                     "key": "prod-organization",
 		    "$populate":{
-			"method": "getCFOrganization",
+			"method": "populateCFOrganizations",
 			"params": {"region":"prod-region"}
 		    }
                 },
@@ -161,7 +188,7 @@
                     "key": "prod-space",
                     "readonly": false,
 		    "$populate":{
-			"method": "getCFSpace",
+			"method": "populateCFSpaces",
 			"params": {"organization":"prod-organization","region":"prod-region"}
 		    }
                 },
@@ -197,14 +224,14 @@
                     "type": "select",
                     "key": "ji-region",
 	            "$populate":{
-			"method":"getCFRegions"
+			"method":"populateCFRegions"
 		    }
                 },
                 {
                     "type": "select",
                     "key": "ji-organization",
 	            "$populate":{
-			"method": "getCFOrganization",
+			"method": "populateCFOrganizations",
 			"params": {"region":"ji-region"}
 		    }
                 },
@@ -213,7 +240,7 @@
                     "key": "ji-space",
                     "readonly": false,
 	            "$populate":{
-			"method": "getCFSpace",
+			"method": "populateCFSpaces",
 			"params": {"organization":"ji-organization","region":"ji-region"}
 		    }
                 }
@@ -224,7 +251,7 @@
             "title": "cs region",
             "key": "test-region",
              "$populate":{
-	         "method":"getCSRegions"
+	         "method":"populateCSRegions"
              }
         },
 	
@@ -234,7 +261,7 @@
             "title": "name space",
             "key": "registry-namespace",
 	    "$populate":{
-	        "method": "getCSNameSpace",
+	        "method": "populateCSNameSpaces",
 	        "params": {"region":"test-region"}
              }
         },
@@ -244,7 +271,7 @@
             "title": "cluster name",
             "key": "registry-cluster-name",
 	    "$populate":{
-	        "method": "getCSClusterName",
+	        "method": "populateCSClusterNames",
 	        "params": {"region":"test-region"}
              }
         }
