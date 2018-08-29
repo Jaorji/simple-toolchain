@@ -74,7 +74,7 @@
             "description": "The bluemix namespace",
             "type": "string",
             "$validate":{
-		    "method":"validateCSNameSpace",
+		    "method":"validateCSNameSpaces",
 		    "params":{"region":"test-region"}
 	    }
         },
