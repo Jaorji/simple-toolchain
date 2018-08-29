@@ -27,7 +27,7 @@
             "type": "string",
 	    "$validate":{
 		   "method":"validateCFSpaces",
-		   "params":{"region":"prod-region"}
+		   "params":{"region":"prod-region","organization":"prod-organization"}
 	    }
         },
         "prod-organization": {
@@ -58,7 +58,7 @@
             "type": "string",
 	    "$validate":{
 		   "method":"validateCFSpaces",
-		   "params":{"region":"ji-region"}
+		   "params":{"region":"ji-region","organization":"ji-organization"}
 	    }
         },
 	"test-region":{
