@@ -18,7 +18,7 @@
             "description": "The bluemix region",
             "type": "string",
 	    "$validate":{
-		   "method":"validateCFRegions"
+		   "method":"validateCFRegion"
 	    }
 	    
         },
@@ -26,7 +26,7 @@
             "description": "The bluemix space",
             "type": "string",
 	    "$validate":{
-		   "method":"validateCFSpaces",
+		   "method":"validateCFSpace",
 		   "params":{"region":"prod-region","organization":"prod-organization"}
 	    }
         },
@@ -34,7 +34,7 @@
             "description": "The bluemix org",
             "type": "string",
 	    "$validate":{
-		   "method":"validateCFOrganizations",
+		   "method":"validateCFOrganization",
 		   "params":{"region":"prod-region"}
 	    }
         },
@@ -42,14 +42,14 @@
             "description": "The bluemix region",
             "type": "string",
 	    "$validate":{
-		   "method":"validateCFRegions"
+		   "method":"validateCFRegion"
 	    }
         },
         "ji-organization": {
             "description": "The bluemix org",
             "type": "string",
 	    "$validate":{
-		   "method":"validateCFOrganizations",
+		   "method":"validateCFOrganization",
 		   "params":{"region":"ji-region"}
 	    }
         },
@@ -57,7 +57,7 @@
             "description": "The bluemix space",
             "type": "string",
 	    "$validate":{
-		   "method":"validateCFSpaces",
+		   "method":"validateCFSpace",
 		   "params":{"region":"ji-region","organization":"ji-organization"}
 	    }
         },
@@ -65,7 +65,7 @@
             "description": "The bluemix region",
             "type": "string",
 	    "$validate":{
-		    "method":"validateCSRegions"
+		    "method":"validateCSRegion"
 	    }
 		    
 	},
@@ -74,7 +74,7 @@
             "description": "The bluemix namespace",
             "type": "string",
             "$validate":{
-		    "method":"validateCSNameSpaces",
+		    "method":"validateCSNameSpace",
 		    "params":{"region":"test-region"}
 	    }
         },
@@ -82,7 +82,7 @@
             "description": "The bluemix cluster name",
             "type":"string",
 	    "$validate":{
-		    "method":"validateCSClusterNames",
+		    "method":"validateCSClusterName",
 		    "params":{"region":"test-region"}
 	    }
         },
