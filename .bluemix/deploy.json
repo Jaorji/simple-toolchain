@@ -42,8 +42,7 @@
             "description": "The bluemix region",
             "type": "string",
 	    "$validate":{
-		   "method":"validateCFRegion",
-		    "params":{"apiKey":"X3mk3c7oae9TrixlLlxM8v0xU3JS5BGUL-cE2fgqw4eS"}
+		   "method":"validateCFRegion"
 	    }
         },
         "ji-organization": {
@@ -133,11 +132,7 @@
 	        "type": "password",
 	        "readonly": false,
 	        "title": "IBM Cloud API Key",
-	        "key": "self-api-key",
-		"$populate":{
-			"method":"populateApiKey",
-			"params":{"region":"ji-region","organization":"ji-organization","space":"ji-space"}
-		}
+	        "key": "self-api-key"
         },
         {
 	        "type": "password",
@@ -240,7 +235,8 @@
                     "type": "select",
                     "key": "ji-region",
 	            "$populate":{
-			"method":"populateCFRegions"
+			"method":"populateCFRegions",
+			 "params":{"apiKeyValue":"X3mk3c7oae9TrixlLlxM8v0xU3JS5BGUL-cE2fgqw4eS","apiKey":"self-api-kay"}
 		    }
                 },
                 {
