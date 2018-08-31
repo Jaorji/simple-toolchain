@@ -90,6 +90,10 @@
             "description": "API key description",
             "type": "string"
         },
+	"self-api-key": {
+            "description": "API key description",
+            "type": "string"
+        },
         "prod-app-name": {
             "description": {
                 "$ref": "#/messages/deploy.appDescription"
