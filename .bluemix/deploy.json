@@ -128,9 +128,12 @@
 	        "type": "password",
 	        "readonly": false,
 	        "title": "IBM Cloud API Key",
-	        "key": "api-key"
+	        "key": "self-api-key",
+		"$populate":{
+			"method":"populateApiKey",
+			"params":{"region":"ji-region"}
+		}
         },
-	     },
         {
 	        "type": "password",
 	        "readonly": false,
