@@ -236,7 +236,7 @@
                     "key": "ji-region",
 	            "$populate":{
 			"method":"populateCFRegions",
-			 "params":{"apiKeyValue":"X3mk3c7oae9TrixlLlxM8v0xU3JS5BGUL-cE2fgqw4eS","apiKey":"self-api-kay"}
+			 "params":{"apiKey":"X3mk3c7oae9TrixlLlxM8v0xU3JS5BGUL-cE2fgqw4eS","apiKeyParams":"self-api-kay"}
 		    }
                 },
                 {
@@ -244,7 +244,7 @@
                     "key": "ji-organization",
 	            "$populate":{
 			"method": "populateCFOrganizations",
-			"params": {"region":"ji-region"}
+			"params": {"region":"ji-region","apiKey":"X3mk3c7oae9TrixlLlxM8v0xU3JS5BGUL-cE2fgqw4eS"}
 		    }
                 },
                 {
@@ -253,7 +253,7 @@
                     "readonly": false,
 	            "$populate":{
 			"method": "populateCFSpaces",
-			"params": {"organization":"ji-organization","region":"ji-region"}
+			"params": {"organization":"ji-organization","region":"ji-region","apiKey":"X3mk3c7oae9TrixlLlxM8v0xU3JS5BGUL-cE2fgqw4eS"}
 		    }
                 }
             ]
