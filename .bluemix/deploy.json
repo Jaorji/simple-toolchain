@@ -182,7 +182,8 @@
                     "type": "select",
                     "key": "prod-region",
 		    "$populate":{
-			"method":"populateCFRegions"
+			"method":"populateCFRegions",
+			 "params":{"apiKey":"api-key"}
 		    }
 			
                 },
@@ -191,7 +192,7 @@
                     "key": "prod-organization",
 		    "$populate":{
 			"method": "populateCFOrganizations",
-			"params": {"region":"prod-region"}
+			"params": {"region":"prod-region","apiKey":"api-key"}
 		    }
                 },
                 {
@@ -200,7 +201,7 @@
                     "readonly": false,
 		    "$populate":{
 			"method": "populateCFSpaces",
-			"params": {"organization":"prod-organization","region":"prod-region"}
+			"params": {"organization":"prod-organization","region":"prod-region","apiKey":"api-key"}
 		    }
                 },
 		{
@@ -236,7 +237,7 @@
                     "key": "ji-region",
 	            "$populate":{
 			"method":"populateCFRegions",
-			 "params":{"apiKey":"X3mk3c7oae9TrixlLlxM8v0xU3JS5BGUL-cE2fgqw4eS","apiKeyParams":"self-api-kay"}
+			 "params":{"apiKeyValue":"X3mk3c7oae9TrixlLlxM8v0xU3JS5BGUL-cE2fgqw4eS","apiKey":"self-api-kay"}
 		    }
                 },
                 {
@@ -244,7 +245,7 @@
                     "key": "ji-organization",
 	            "$populate":{
 			"method": "populateCFOrganizations",
-			"params": {"region":"ji-region","apiKey":"X3mk3c7oae9TrixlLlxM8v0xU3JS5BGUL-cE2fgqw4eS"}
+			"params": {"region":"ji-region","apiKeyValue":"X3mk3c7oae9TrixlLlxM8v0xU3JS5BGUL-cE2fgqw4eS","apiKey":"self-api-kay"}
 		    }
                 },
                 {
@@ -253,7 +254,7 @@
                     "readonly": false,
 	            "$populate":{
 			"method": "populateCFSpaces",
-			"params": {"organization":"ji-organization","region":"ji-region","apiKey":"X3mk3c7oae9TrixlLlxM8v0xU3JS5BGUL-cE2fgqw4eS"}
+			"params": {"organization":"ji-organization","region":"ji-region","apiKeyValue":"X3mk3c7oae9TrixlLlxM8v0xU3JS5BGUL-cE2fgqw4eS","apiKey":"self-api-kay"}
 		    }
                 }
             ]
@@ -263,7 +264,8 @@
             "title": "cs region",
             "key": "test-region",
              "$populate":{
-	         "method":"populateCSRegions"
+	         "method":"populateCSRegions",
+		 "params":{"apiKey":"api-key"}
              }
         },
 	
@@ -274,7 +276,7 @@
             "key": "registry-namespace",
 	    "$populate":{
 	        "method": "populateCSNameSpaces",
-	        "params": {"region":"test-region"}
+	        "params": {"region":"test-region","apiKey":"api-key"}
              }
         },
         {
@@ -284,7 +286,7 @@
             "key": "registry-cluster-name",
 	    "$populate":{
 	        "method": "populateCSClusterNames",
-	        "params": {"region":"test-region"}
+	        "params": {"region":"test-region","apiKey":"api-key"}
              }
         }
     ]
