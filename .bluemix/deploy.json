@@ -94,6 +94,10 @@
             "description": "API key description",
             "type": "string"
         },
+	 "cluster-api-key": {
+            "description": "API key description",
+            "type": "string"
+        },
         "prod-app-name": {
             "description": {
                 "$ref": "#/messages/deploy.appDescription"
