@@ -113,7 +113,8 @@
         "prod-app-name",
         "registry-namespace",
         "registry-cluster-name",
-        "api-key"
+        "api-key",
+        "cluster-api-key"
     ],
     "form": [
         {
@@ -257,7 +258,7 @@
 	        "type": "password",
 	        "readonly": false,
 	        "title": "IBM Cloud API Key",
-	        "key": "self-api-key"
+	        "key": "cluster-api-key"
         },
 	{
             "type": "select",       
@@ -265,7 +266,7 @@
             "key": "test-region",
              "$populate":{
 	         "method":"populateCSRegions",
-		 "params":{"apiKey":"api-key"}
+		 "params":{"apiKey":"cluster-api-key"}
              }
         },
 	
@@ -276,7 +277,7 @@
             "key": "registry-namespace",
 	    "$populate":{
 	        "method": "populateCSNameSpaces",
-	        "params": {"region":"test-region","apiKey":"api-key"}
+	        "params": {"region":"test-region","apiKey":"cluster-api-key"}
              }
         },
         {
@@ -286,7 +287,7 @@
             "key": "registry-cluster-name",
 	    "$populate":{
 	        "method": "populateCSClusterNames",
-	        "params": {"region":"test-region","apiKey":"api-key"}
+	        "params": {"region":"test-region","apiKey":"cluster-api-key"}
              }
         }
     ]
