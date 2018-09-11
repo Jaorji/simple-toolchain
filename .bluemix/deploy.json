@@ -65,7 +65,8 @@
             "description": "The bluemix region",
             "type": "string",
 	    "$validate":{
-		    "method":"validateCSRegion"
+		    "method":"validateCSRegion",
+		    "params":{"apiKey":"cluster-api-key"}
 	    }
 		    
 	},
@@ -75,7 +76,7 @@
             "type": "string",
             "$validate":{
 		    "method":"validateCSNameSpace",
-		    "params":{"region":"test-region"}
+		    "params":{"region":"test-region","apiKey":"cluster-api-key}
 	    }
         },
         "registry-cluster-name":{
@@ -83,7 +84,7 @@
             "type":"string",
 	    "$validate":{
 		    "method":"validateCSClusterName",
-		    "params":{"region":"test-region"}
+		    "params":{"region":"test-region","apiKey":"cluster-api-key"}
 	    }
         },
         "api-key": {
