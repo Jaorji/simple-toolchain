@@ -76,7 +76,7 @@
             "type": "string",
             "$validate":{
 		    "method":"validateCSNameSpace",
-		    "params":{"region":"test-region","apiKey":"cluster-api-key}
+		    "params":{"region":"test-region","apiKey":"cluster-api-key"}
 	    }
         },
         "registry-cluster-name":{
