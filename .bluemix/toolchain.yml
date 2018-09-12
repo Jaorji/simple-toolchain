@@ -38,7 +38,7 @@ services:
       services:
         - sample-repo
       name: '{{services.sample-repo.parameters.repo_name}}'
-      api-key: '{{services.sample-repo.parameters.default-api-key}}'
+      default-api-key: '{{services.sample-repo.parameters.default-api-key}}'
       ui-pipeline: true
       configuration:
         content:
@@ -59,6 +59,6 @@ form:
   pipeline:
     parameters:
       prod-app-name: '{{services.sample-repo.parameters.repo_name}}'
-      default-api-key: '{{services.sample-repo.parameters.api-key}}'
+      default-api-key: '{{services.sample-repo.parameters.default-api-key}}'
     schema:
       $ref: deploy.json
