@@ -120,7 +120,8 @@
         "registry-namespace",
         "registry-cluster-name",
         "api-key",
-        "cluster-api-key"
+        "cluster-api-key",
+	"self-api-key"
     ],
     "form": [
         {
