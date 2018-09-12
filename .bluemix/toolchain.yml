@@ -38,6 +38,7 @@ services:
       services:
         - sample-repo
       name: '{{services.sample-repo.parameters.repo_name}}'
+      api-key: '{{services.sample-repo.parameters.self-api-key}}'
       ui-pipeline: true
       configuration:
         content:
