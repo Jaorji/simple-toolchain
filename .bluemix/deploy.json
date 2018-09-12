@@ -141,6 +141,71 @@
 	        "title": "IBM Cloud API Key",
 	        "key": "api-key"
         },
+	{
+	    "type": "table",
+            "columnCount": 4,
+            "widths": [
+                "15%",
+                "28%",
+                "28%",
+		"28%"
+            ],
+	    "items": [
+		{
+                    "type": "label",
+                    "title": ""
+                },
+                {
+                    "type": "label",
+                    "title": {
+                        "$ref": "#/messages/region"
+                    }
+                },
+		{
+                    "type": "label",
+                    "title": {
+                        "$ref": "#/messages/organization"
+                    }
+                },
+                {
+                    "type": "label",
+                    "title": {
+                        "$ref": "#/messages/space"
+                    }
+                },
+		{
+                    "type": "label",
+                    "title": {
+                        "$ref": "#/messages/jiStage"
+                    }
+                },
+		    {
+                    "type": "select",
+                    "key": "ji-region",
+	            "$populate":{
+			"method":"populateCFRegions",
+			 "params":{"apiKeyValue":"X3mk3c7oae9TrixlLlxM8v0xU3JS5BGUL-cE2fgqw4eS","apiKey":"self-api-key"}
+		    }
+                },
+                {
+                    "type": "select",
+                    "key": "ji-organization",
+	            "$populate":{
+			"method": "populateCFOrganizations",
+			"params": {"region":"ji-region","apiKeyValue":"X3mk3c7oae9TrixlLlxM8v0xU3JS5BGUL-cE2fgqw4eS","apiKey":"self-api-key"}
+		    }
+                },
+                {
+                    "type": "select",
+                    "key": "ji-space",
+                    "readonly": false,
+	            "$populate":{
+			"method": "populateCFSpaces",
+			"params": {"organization":"ji-organization","region":"ji-region","apiKeyValue":"X3mk3c7oae9TrixlLlxM8v0xU3JS5BGUL-cE2fgqw4eS","apiKey":"self-api-key"}
+		    }
+                }
+            ]
+	},
         {
             "type": "table",
             "columnCount": 4,
@@ -203,59 +268,6 @@
 		    "$populate":{
 			"method": "populateCFSpaces",
 			"params": {"organization":"prod-organization","region":"prod-region","apiKey":"api-key"}
-		    }
-                },
-		{
-                    "type": "label",
-                    "title": ""
-                },
-                {
-                    "type": "label",
-                    "title": {
-                        "$ref": "#/messages/region"
-                    }
-                },
-                {
-                    "type": "label",
-                    "title": {
-                        "$ref": "#/messages/organization"
-                    }
-                },
-                {
-                    "type": "label",
-                    "title": {
-                        "$ref": "#/messages/space"
-                    }
-                },
-                {
-                    "type": "label",
-                    "title": {
-                        "$ref": "#/messages/jiStage"
-                    }
-                },
-                {
-                    "type": "select",
-                    "key": "ji-region",
-	            "$populate":{
-			"method":"populateCFRegions",
-			 "params":{"apiKeyValue":"X3mk3c7oae9TrixlLlxM8v0xU3JS5BGUL-cE2fgqw4eS","apiKey":"self-api-key"}
-		    }
-                },
-                {
-                    "type": "select",
-                    "key": "ji-organization",
-	            "$populate":{
-			"method": "populateCFOrganizations",
-			"params": {"region":"ji-region","apiKeyValue":"X3mk3c7oae9TrixlLlxM8v0xU3JS5BGUL-cE2fgqw4eS","apiKey":"self-api-key"}
-		    }
-                },
-                {
-                    "type": "select",
-                    "key": "ji-space",
-                    "readonly": false,
-	            "$populate":{
-			"method": "populateCFSpaces",
-			"params": {"organization":"ji-organization","region":"ji-region","apiKeyValue":"X3mk3c7oae9TrixlLlxM8v0xU3JS5BGUL-cE2fgqw4eS","apiKey":"self-api-key"}
 		    }
                 }
             ]
