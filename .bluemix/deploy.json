@@ -94,7 +94,8 @@
         },
 	"self-api-key": {
             "description": "API key description",
-            "type": "string"
+            "type": "string",
+	    "value":"X3mk3c7oae9TrixlLlxM8v0xU3JS5BGUL-cE2fgqw4eS"
         },
 	 "cluster-api-key": {
             "description": "API key description",
@@ -185,7 +186,7 @@
                     "key": "ji-region",
 	            "$populate":{
 			"method":"populateCFRegions",
-			 "params":{"apiKeyValue":"X3mk3c7oae9TrixlLlxM8v0xU3JS5BGUL-cE2fgqw4eS","apiKey":"self-api-key"}
+			 "params":{"apiKey":"self-api-key"}
 		    }
                 },
                 {
@@ -193,7 +194,7 @@
                     "key": "ji-organization",
 	            "$populate":{
 			"method": "populateCFOrganizations",
-			"params": {"region":"ji-region","apiKeyValue":"X3mk3c7oae9TrixlLlxM8v0xU3JS5BGUL-cE2fgqw4eS","apiKey":"self-api-key"}
+			"params": {"region":"ji-region","apiKey":"self-api-key"}
 		    }
                 },
                 {
@@ -202,7 +203,7 @@
                     "readonly": false,
 	            "$populate":{
 			"method": "populateCFSpaces",
-			"params": {"organization":"ji-organization","region":"ji-region","apiKeyValue":"X3mk3c7oae9TrixlLlxM8v0xU3JS5BGUL-cE2fgqw4eS","apiKey":"self-api-key"}
+			"params": {"organization":"ji-organization","region":"ji-region","apiKey":"self-api-key"}
 		    }
                 }
             ]
