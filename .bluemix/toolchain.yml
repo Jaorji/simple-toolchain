@@ -18,6 +18,7 @@ template:
       [master](https://github.com/open-toolchain/simple-toolchain/tree/master)
 toolchain:
   name: 'simple-toolchain-{{timestamp}}'
+  self-api-key: '{{self-api-key}}'
   template:
     getting_started:
       $ref: "#/messages/template.gettingStarted"
@@ -26,6 +27,7 @@ services:
     service_id: githubpublic
     parameters:
       repo_name: '{{toolchain.name}}'
+      self-api-key: '{{toolchain.self-api-key}}'
       repo_url: 'https://github.com/open-toolchain/node-hello-world'
       type: clone
       has_issues: true
@@ -56,5 +58,6 @@ form:
   pipeline:
     parameters:
       prod-app-name: '{{services.sample-repo.parameters.repo_name}}'
+      self-api-key: '{{service.sample-repo.parameters.self-api-key}}'
     schema:
       $ref: deploy.json
