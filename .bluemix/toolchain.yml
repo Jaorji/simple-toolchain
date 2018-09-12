@@ -18,6 +18,7 @@ template:
       [master](https://github.com/open-toolchain/simple-toolchain/tree/master)
 toolchain:
   name: 'simple-toolchain-{{timestamp}}'
+  test: '{{timestamp}}'
   self-api-key: '{{self-api-key}}'
   template:
     getting_started:
