@@ -92,10 +92,9 @@
             "description": "API key description",
             "type": "string"
         },
-	"self-api-key": {
+	"default-api-key": {
             "description": "API key description",
-            "type": "string",
-	    "value":"X3mk3c7oae9TrixlLlxM8v0xU3JS5BGUL-cE2fgqw4eS"
+            "type": "string"
         },
 	 "cluster-api-key": {
             "description": "API key description",
@@ -122,7 +121,7 @@
         "registry-cluster-name",
         "api-key",
         "cluster-api-key",
-	"self-api-key"
+	"default-api-key"
     ],
     "form": [
         {
@@ -141,7 +140,7 @@
 	        "type": "password",
 	        "readonly": false,
 	        "title": "IBM Cloud API Key",
-	        "key": "self-api-key"
+	        "key": "default-api-key"
         },
 	{
 	    "type": "table",
@@ -186,7 +185,7 @@
                     "key": "ji-region",
 	            "$populate":{
 			"method":"populateCFRegions",
-			 "params":{"apiKey":"self-api-key"}
+			 "params":{"apiKey":"default-api-key"}
 		    }
                 },
                 {
@@ -194,7 +193,7 @@
                     "key": "ji-organization",
 	            "$populate":{
 			"method": "populateCFOrganizations",
-			"params": {"region":"ji-region","apiKey":"self-api-key"}
+			"params": {"region":"ji-region","apiKey":"default-api-key"}
 		    }
                 },
                 {
@@ -203,7 +202,7 @@
                     "readonly": false,
 	            "$populate":{
 			"method": "populateCFSpaces",
-			"params": {"organization":"ji-organization","region":"ji-region","apiKey":"self-api-key"}
+			"params": {"organization":"ji-organization","region":"ji-region","apiKey":"default-api-key"}
 		    }
                 }
             ]
