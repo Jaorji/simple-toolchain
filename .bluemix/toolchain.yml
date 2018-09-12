@@ -27,7 +27,7 @@ services:
     service_id: githubpublic
     parameters:
       repo_name: '{{toolchain.name}}'
-      default_api_key: '{{toolchain.default_api_key}}'
+      default-api-key: '{{toolchain.default_api_key}}'
       repo_url: 'https://github.com/open-toolchain/node-hello-world'
       type: clone
       has_issues: true
@@ -38,7 +38,7 @@ services:
       services:
         - sample-repo
       name: '{{services.sample-repo.parameters.repo_name}}'
-      api-key: '{{services.sample-repo.parameters.default_api_key}}'
+      api-key: '{{services.sample-repo.parameters.default-api-key}}'
       ui-pipeline: true
       configuration:
         content:
