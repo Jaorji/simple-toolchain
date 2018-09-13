@@ -43,7 +43,8 @@
             "description": "The bluemix region",
             "type": "string",
 	    "$validate":{
-		   "method":"validateCFRegion"
+		   "method":"validateCFRegion",
+		    "params":{"apiKey":"default-api-key"}
 	    }
         },
         "ji-organization": {
@@ -51,7 +52,7 @@
             "type": "string",
 	    "$validate":{
 		   "method":"validateCFOrganization",
-		   "params":{"region":"ji-region"}
+		   "params":{"region":"ji-region","apiKey":"default-api-key"}
 	    }
         },
         "ji-space": {
@@ -59,7 +60,7 @@
             "type": "string",
 	    "$validate":{
 		   "method":"validateCFSpace",
-		   "params":{"region":"ji-region","organization":"ji-organization"}
+		   "params":{"region":"ji-region","organization":"ji-organization","apiKey":"default-api-key"}
 	    }
         },
 	"test-region":{
