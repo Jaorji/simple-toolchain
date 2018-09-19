@@ -141,7 +141,8 @@
 	        "type": "password",
 	        "readonly": false,
 	        "title": "IBM Cloud API Key",
-	        "key": "default-api-key"
+	        "key": "default-api-key",
+		 "displayType":"api-key"
         },
 	{
 	    "type": "table",
@@ -212,7 +213,8 @@
 	        "type": "password",
 	        "readonly": false,
 	        "title": "IBM Cloud API Key",
-	        "key": "api-key"
+	        "key": "api-key",
+		 "displayType":"api-key"
         },
         {
             "type": "table",
