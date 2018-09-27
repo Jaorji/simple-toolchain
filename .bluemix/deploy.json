@@ -196,7 +196,7 @@
                     "type": "select",
                     "key": "ji-organization",
 	            "options":{
-			$populate":{
+			"$populate":{
 			"method": "populateCFOrganizations",
 			"params": {"region":"ji-region","apiKey":"default-api-key"}
 		        }
@@ -207,7 +207,7 @@
                     "key": "ji-space",
                     "readonly": false,
 	            "options":{
-			$populate":{
+			"$populate":{
 			"method": "populateCFSpaces",
 			"params": {"organization":"ji-organization","region":"ji-region","apiKey":"default-api-key"}
 		       }
