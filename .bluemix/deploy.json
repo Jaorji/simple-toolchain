@@ -304,10 +304,12 @@
             "type": "select",       
             "title": "cs region",
             "key": "test-region",
-             "$populate":{
-	         "method":"populateCSRegions",
-		 "params":{"apiKey":"cluster-api-key"}
-             }
+	    "options":{
+                "$populate":{
+	           "method":"populateCSRegions",
+		   "params":{"apiKey":"cluster-api-key"}
+               }
+	    }
         },
 	
         {
@@ -315,20 +317,24 @@
             "readonly": false,
             "title": "name space",
             "key": "registry-namespace",
-	    "$populate":{
-	        "method": "populateCSNameSpaces",
-	        "params": {"region":"test-region","apiKey":"cluster-api-key"}
-             }
+	    "options":{
+	       "$populate":{
+	          "method": "populateCSNameSpaces",
+	          "params": {"region":"test-region","apiKey":"cluster-api-key"}
+               }
+	    }
         },
         {
             "type": "select",
             "readonly": false,
             "title": "cluster name",
             "key": "registry-cluster-name",
-	    "$populate":{
+	    "options":{
+	       "$populate":{
 	        "method": "populateCSClusterNames",
 	        "params": {"region":"test-region","apiKey":"cluster-api-key"}
-             }
+               }
+	    }
         }
     ]
 }
