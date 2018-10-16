@@ -138,7 +138,7 @@
             "key": "prod-app-name"
         },
 	 {
-	        "type": "password",
+	        "type": "ibm-cloud-api-key",
 	        "readonly": false,
 	        "title": "IBM Cloud API Key",
 	        "key": "default-api-key",
