@@ -91,15 +91,27 @@
         },
         "api-key": {
             "description": "API key description",
-            "type": "string"
+            "type": "string",
+            "$validate":{
+		   "method":"validateCFRegion",
+		    "params":{"apiKey":"api-key"}
+	    }
         },
 	"default-api-key": {
             "description": "API key description",
-            "type": "string"
+            "type": "string",
+           "$validate":{
+		   "method":"validateCFRegion",
+		    "params":{"apiKey":"default-api-key"}
+	    }
         },
 	 "cluster-api-key": {
             "description": "API key description",
-            "type": "string"
+            "type": "string",
+	    "$validate":{
+		   "method":"validateCFRegion",
+		    "params":{"apiKey":"cluster-api-key"}
+	    }
         },
         "prod-app-name": {
             "description": {
