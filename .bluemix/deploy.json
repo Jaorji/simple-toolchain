@@ -93,7 +93,7 @@
             "description": "API key description",
             "type": "string",
             "$validate":{
-		   "method":"validateCFRegion",
+		   "method":"validateApiKey",
 		    "params":{"apiKey":"api-key"}
 	    }
         },
@@ -101,7 +101,7 @@
             "description": "API key description",
             "type": "string",
            "$validate":{
-		   "method":"validateCFRegion",
+		   "method":"validateApiKey",
 		    "params":{"apiKey":"default-api-key"}
 	    }
         },
@@ -109,7 +109,7 @@
             "description": "API key description",
             "type": "string",
 	    "$validate":{
-		   "method":"validateCFRegion",
+		   "method":"validateApiKey",
 		    "params":{"apiKey":"cluster-api-key"}
 	    }
         },
