@@ -81,6 +81,14 @@
 		    "params":{"region":"test-region","apiKey":"cluster-api-key"}
 	    }
         },
+	"registry-resource-group":{
+            "description": "The bluemix cluster name",
+            "type":"string",
+	    "$validate":{
+		    "method":"validateCSClusterName",
+		    "params":{"region":"test-region","apiKey":"cluster-api-key"}
+	    }
+	},
         "registry-cluster-name":{
             "description": "The bluemix cluster name",
             "type":"string",
@@ -132,6 +140,7 @@
         "prod-app-name",
         "registry-namespace",
         "registry-cluster-name",
+	"registry-resource-group",
         "api-key",
         "cluster-api-key",
 	"default-api-key"
