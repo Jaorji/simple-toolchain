@@ -347,6 +347,17 @@
 	        "params": {"region":"test-region","apiKey":"cluster-api-key"}
                }
 	    }
+        }, {
+            "type": "select",
+            "readonly": false,
+            "title": "resource group",
+            "key": "registry-resource-group",
+	    "options":{
+	       "$populate":{
+	        "method": "populateResourceGroup",
+	        "params": {"region":"test-region","apiKey":"cluster-api-key"}
+               }
+	    }
         }
     ]
 }
