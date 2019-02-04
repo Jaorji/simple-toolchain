@@ -353,7 +353,7 @@
 	    "options":{
 	       "$populate":{
 	        "method": "populateCSClusterNames",
-	        "params": {"region":"test-region","apiKey":"cluster-api-key"}
+	        "params": {"region":"test-region","resourceGroup":"registry-resource-group","apiKey":"cluster-api-key"}
                }
 	    }
         }, {
