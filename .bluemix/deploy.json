@@ -12,7 +12,8 @@
     "longDescription": {
         "$ref": "#/messages/deploy.longDescription"
     },
-    "type": "object",
+    "type": "object", 
+    "version": 2,
     "properties": {
         "prod-region": {
             "description": "The bluemix region",
