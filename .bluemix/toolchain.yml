@@ -58,6 +58,5 @@ services:
 form:
   pipeline:
     parameters:
-      default-api-key: '{{services.sample-repo.parameters.default-api-key}}'
     schema:
       $ref: deploy.json
