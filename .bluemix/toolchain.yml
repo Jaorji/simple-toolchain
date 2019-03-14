@@ -30,7 +30,7 @@ services:
       default-api-key: '{{toolchain.default-api-key}}'
       repo_url: 'https://github.com/open-toolchain/node-hello-world'
       type: clone
-      has_issues: false
+      has_issues: true
       enable_traceability: true
   sample-build:
     service_id: pipeline
@@ -58,5 +58,7 @@ services:
 form:
   pipeline:
     parameters:
+       prod-app-name: '{{services.sample-repo.parameters.repo_name}}'
+      default-api-key: '{{services.sample-repo.parameters.default-api-key}}'
     schema:
       $ref: deploy.json
