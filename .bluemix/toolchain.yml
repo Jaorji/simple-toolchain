@@ -38,7 +38,7 @@ services:
       services:
         - sample-repo
       name: '{{services.sample-repo.parameters.repo_name}}'
-      default-api-key: '{{services.sample-repo.parameters.default-api-key}}'
+      type: tekton
       ui-pipeline: true
       configuration:
         content:
