@@ -5,7 +5,10 @@
     branch: master
     service: ${SAMPLE_REPO}
  triggers:
- - type: commit
+ - type: git
+   name: Trigger
+   events: {"push":true,"pull_request":true,"pull_request_closed":false}
+   eventListener: listener
  properties:
  - name: DOCKER_ROOT
     value: .
