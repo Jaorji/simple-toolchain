@@ -12,8 +12,7 @@
     "longDescription": {
         "$ref": "#/messages/deploy.longDescription"
     },
-    "type": "object", 
-    "version": 2,
+    "type": "object",
     "properties": {
         "prod-region": {
             "description": "The bluemix region",
@@ -22,7 +21,14 @@
 		   "method":"validateCFRegion",
 		    "params":{"apiKey":"api-key"}
 	    }
-	    
+	},
+        "prod-organization": {
+            "description": "The bluemix org",
+            "type": "string",
+	    "$validate":{
+		   "method":"validateCFSpace",
+		   "params":{"region":"prod-region","apiKey":"api-key"}
+	    }
         },
         "prod-space": {
             "description": "The bluemix space",
@@ -32,20 +38,12 @@
 		   "params":{"region":"prod-region","organization":"prod-organization","apiKey":"api-key"}
 	    }
         },
-        "prod-organization": {
-            "description": "The bluemix org",
-            "type": "string",
-	    "$validate":{
-		   "method":"validateCFOrganization",
-		   "params":{"region":"prod-region","apiKey":"api-key"}
-	    }
-        },
 	    "ji-region": {
             "description": "The bluemix region",
             "type": "string",
-	    "$validate":{
+            "$validate":{
 		   "method":"validateCFRegion",
-		    "params":{"apiKey":"default-api-key"}
+		    "params":{"apiKey":"self-api-key"}
 	    }
         },
         "ji-organization": {
@@ -53,7 +51,7 @@
             "type": "string",
 	    "$validate":{
 		   "method":"validateCFOrganization",
-		   "params":{"region":"ji-region","apiKey":"default-api-key"}
+		   "params":{"region":"ji-region","apiKey":"self-api-key"}
 	    }
         },
         "ji-space": {
@@ -61,65 +59,23 @@
             "type": "string",
 	    "$validate":{
 		   "method":"validateCFSpace",
-		   "params":{"region":"ji-region","organization":"ji-organization","apiKey":"default-api-key"}
-	    }
-        },
-	"test-region":{
-            "description": "The bluemix region",
-            "type": "string",
-	    "$validate":{
-		    "method":"validateCSRegion",
-		    "params":{"apiKey":"cluster-api-key"}
-	    }
-		    
-	},
-
-        "registry-namespace": {
-            "description": "The bluemix namespace",
-            "type": "string",
-            "$validate":{
-		    "method":"validateCSNameSpace",
-		    "params":{"region":"test-region","apiKey":"cluster-api-key"}
-	    }
-        },
-	"registry-resource-group":{
-            "description": "The bluemix cluster name",
-            "type":"string",
-	    "$validate":{
-		    "method":"validateCSClusterName",
-		    "params":{"region":"test-region","apiKey":"cluster-api-key"}
-	    }
-	},
-        "registry-cluster-name":{
-            "description": "The bluemix cluster name",
-            "type":"string",
-	    "$validate":{
-		    "method":"validateCSClusterName",
-		    "params":{"region":"test-region","apiKey":"cluster-api-key"}
+		   "params":{"region":"ji-region","organization":"ji-organization","apiKey":"self-api-key"}
 	    }
         },
         "api-key": {
             "description": "API key description",
             "type": "string",
-            "$validate":{
+	    "$validate":{
 		   "method":"validateApiKey",
 		    "params":{"apiKey":"api-key"}
 	    }
         },
-	"default-api-key": {
-            "description": "API key description",
-            "type": "string",
-           "$validate":{
-		   "method":"validateApiKey",
-		    "params":{"apiKey":"default-api-key"}
-	    }
-        },
-	 "cluster-api-key": {
+	 "self-api-key": {
             "description": "API key description",
             "type": "string",
 	    "$validate":{
-		   "method":"validateApiKey",
-		    "params":{"apiKey":"cluster-api-key"}
+		"method":"validateApiKey",
+		"params":{"apiKey":"self-api-key"}
 	    }
         },
         "prod-app-name": {
@@ -134,23 +90,11 @@
         "prod-region",
         "prod-organization",
         "prod-space",
-	"ji-region",
-	"ji-organization",
-	"ji-space",
-	"test-region",
         "prod-app-name",
-        "registry-namespace",
-        "registry-cluster-name",
-	"registry-resource-group",
-        "api-key",
-        "cluster-api-key",
-	"default-api-key"
+        "api-key"
     ],
     "form": [
-        {
-            "type": "validator",
-            "url": "/devops/setup/bm-helper/helper.html"
-        },
+     
         {
             "type": "text",
             "readonly": false,
@@ -159,13 +103,17 @@
             },
             "key": "prod-app-name"
         },
-	 {
+        {
 	        "type": "ibm-cloud-api-key",
 	        "readonly": false,
 	        "title": "IBM Cloud API Key",
-	        "key": "default-api-key",
-		 "displayType":"api-key"
+	        "key": "api-key"
         },
+	       {
+            "type": "validator",
+            "url": "/devops/setup/bm-helper/helper.html"
+        },
+
 	{
 	    "type": "table",
             "columnCount": 4,
@@ -176,7 +124,7 @@
 		"28%"
             ],
 	    "items": [
-		{
+	       {
                     "type": "label",
                     "title": ""
                 },
@@ -186,85 +134,7 @@
                         "$ref": "#/messages/region"
                     }
                 },
-		{
-                    "type": "label",
-                    "title": {
-                        "$ref": "#/messages/organization"
-                    }
-                },
                 {
-                    "type": "label",
-                    "title": {
-                        "$ref": "#/messages/space"
-                    }
-                },
-		{
-                    "type": "label",
-                    "title": {
-                        "$ref": "#/messages/jiStage"
-                    }
-                },
-		    {
-                    "type": "select",
-                    "key": "ji-region",
-	            "options":{
-			"$populate":{
-			"method":"populateCFRegions",
-			 "params":{"apiKey":"default-api-key"}
-		        }
-		    }
-                },
-                {
-                    "type": "select",
-                    "key": "ji-organization",
-	            "options":{
-			"$populate":{
-			"method": "populateCFOrganizations",
-			"params": {"region":"ji-region","apiKey":"default-api-key"}
-		        }
-		    }
-                },
-                {
-                    "type": "select",
-                    "key": "ji-space",
-                    "readonly": false,
-	            "options":{
-			"$populate":{
-			"method": "populateCFSpaces",
-			"params": {"organization":"ji-organization","region":"ji-region","apiKey":"default-api-key"}
-		       }
-		    }
-                }
-            ]
-	},
-	{
-	        "type": "ibm-cloud-api-key",
-	        "readonly": false,
-	        "title": "IBM Cloud API Key",
-	        "key": "api-key",
-		 "displayType":"api-key"
-        },
-        {
-            "type": "table",
-            "columnCount": 4,
-            "widths": [
-                "15%",
-                "28%",
-                "28%",
-		"28%"
-            ],
-            "items": [
-                {
-                    "type": "label",
-                    "title": ""
-                },
-                {
-                    "type": "label",
-                    "title": {
-                        "$ref": "#/messages/region"
-                    }
-                },
-		{
                     "type": "label",
                     "title": {
                         "$ref": "#/messages/organization"
@@ -282,93 +152,39 @@
                         "$ref": "#/messages/prodStage"
                     }
                 },
-                {
+		                  {
                     "type": "select",
                     "key": "prod-region",
-		    "options":{
-		       "$populate":{
-			   "method":"populateCFRegions",
-			    "params":{"apiKey":"api-key"}
-		        }
-		    }
-			
-                },
-	        {
-                    "type": "select",
-                    "key": "prod-organization",
-		    "options":{
-		        "$populate":{
-			    "method": "populateCFOrganizations",
-			    "params": {"region":"prod-region","apiKey":"api-key"}
-		         }
-		    }
+            "options" : {
+                 "$populate":{
+                "method":"populateCFRegions",
+                "params":{"apiKey":"api-key"}
+                 }
+            }
                 },
                 {
+                    "type": "select",
+                    "key": "prod-organization",
+                "options":{
+                 "$populate":{
+                "method":"populateCFOrganizations",
+                "params":{"region":"prod-region","apiKey":"api-key"}
+                 }
+            }
+                },
+                            {
                     "type": "select",
                     "key": "prod-space",
                     "readonly": false,
-		    "options":{
-		        "$populate":{
-			    "method": "populateCFSpaces",
-			    "params": {"organization":"prod-organization","region":"prod-region","apiKey":"api-key"}
-		        }
-		    }
+            "options": {
+                 "$populate":{
+                "method":"populateCFSpaces",
+                "params":{"region":"prod-region","organization":"prod-organization","apiKey":"api-key"}
+                 }
+            }
                 }
-            ]
-        },
-	{
-	        "type": "ibm-cloud-api-key",
-	        "readonly": false,
-	        "title": "IBM Cloud API Key",
-	        "key": "cluster-api-key"
-        },
-	{
-            "type": "select",       
-            "title": "cs region",
-            "key": "test-region",
-	    "options":{
-                "$populate":{
-	           "method":"populateCSRegions",
-		   "params":{"apiKey":"cluster-api-key"}
-               }
-	    }
-        },
-	
-        {
-            "type": "select",
-            "readonly": false,
-            "title": "name space",
-            "key": "registry-namespace",
-	    "options":{
-	       "$populate":{
-	          "method": "populateCSNameSpaces",
-	          "params": {"region":"test-region","apiKey":"cluster-api-key"}
-               }
-	    }
-        },
-	     {
-            "type": "select",
-            "readonly": false,
-            "title": "resource group",
-            "key": "registry-resource-group",
-	    "options":{
-	       "$populate":{
-	        "method": "populateResourceGroup",
-	        "params": {"region":"test-region","apiKey":"cluster-api-key"}
-               }
-	    }
-        },
-        {
-            "type": "select",
-            "readonly": false,
-            "title": "cluster name",
-            "key": "registry-cluster-name",
-	    "options":{
-	       "$populate":{
-	        "method": "populateCSClusterNames",
-	        "params": {"region":"test-region","resourceGroup":"registry-resource-group","apiKey":"cluster-api-key"}
-               }
-	    }
-        }
+		    
+	    ]
+	}
     ]
 }
