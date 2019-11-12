@@ -18,5 +18,5 @@
     value: Dockerfile
     type: text 
  - name: SOME_BOOL_PROP
-    value: ${SOME_BOOL_PROP}
-    type: text
+    value: 123456
+    type: SECURE
