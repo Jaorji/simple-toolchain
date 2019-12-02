@@ -2,8 +2,8 @@
 private_wroker: ${PRIVATE_WORKER}
 inputs:
 - type: git
-   branch: master
-   service: ${SAMPLE_REPO}
+  branch: master
+  service: ${SAMPLE_REPO}
 triggers:
 - type: git
   name: Trigger
@@ -12,11 +12,11 @@ triggers:
   eventListener: listener
 properties:
 - name: DOCKER_ROOT
-   value: .
-   type: text
+  value: .
+  type: text
 - name: DOCKER_FILE
-   value: Dockerfile
-   type: text 
+  value: Dockerfile
+  type: text 
 - name: SOME_BOOL_PROP
-   value: 123456
-   type: SECURE
+  value: 123456
+  type: SECURE
