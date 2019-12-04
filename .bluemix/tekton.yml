@@ -1,5 +1,5 @@
 ---
-private_wroker: ${PRIVATE_WORKER}
+private_worker: ${PRIVATE_WORKER}
 inputs:
 - type: git
   branch: master
