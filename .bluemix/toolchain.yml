@@ -29,8 +29,8 @@ services:
     parameters:
       repo_name: '{{toolchain.name}}'
       default-api-key: '{{toolchain.default-api-key}}'
-      repo_url: 'https://github.com/open-toolchain/node-hello-world'
-      type: clone
+      repo_url: 'https://github.com/Jaorji/hello-tekton'
+      type: existing
       has_issues: false
       enable_traceability: true
   sample-build:
