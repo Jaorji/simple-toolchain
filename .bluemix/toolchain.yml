@@ -29,7 +29,7 @@ services:
     parameters:
       repo_name: '{{toolchain.name}}'
       default-api-key: '{{toolchain.default-api-key}}'
-      repo_url: 'https://github.com/briangleeson/greenwell-tekton'
+      repo_url: 'https://github.com/open-toolchain/node-hello-world'
       type: clone
       has_issues: false
       enable_traceability: true
