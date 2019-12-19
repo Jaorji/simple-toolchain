@@ -13,12 +13,12 @@ triggers:
   events: {"push":true,"pull_request":true,"pull_request_closed":false}
   eventListener: listener
 properties:
-- name: DOCKER_ROOT
-  value: .
-  type: text
-- name: DOCKER_FILE
-  value: Dockerfile
-  type: text 
-- name: SOME_BOOL_PROP
-  value: 123456
+- name: apikey
+  value: ${API_KEY}
   type: SECURE
+- name: cluster
+  value: mycluster-group1-ji
+  type: text 
+- name: registryNamespace
+  value: hhch
+  type: text 
