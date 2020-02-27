@@ -23,7 +23,7 @@ stages:
     type: text
   - name: APP_URL
     value: undefined
-    type: text
+    type: text_area
   jobs:
   - name: Blue-Green Deploy
     type: deployer
