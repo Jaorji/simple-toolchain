@@ -43,7 +43,7 @@ services:
       ui-pipeline: true
       configuration:
         content:
-          $text: pipeline.yml
+          $text: https://github.com/Jaorji/simple-tekton-toolchain/blob/master/.bluemix/tekton.yaml
         env:
           SAMPLE_REPO: sample-repo
           CF_APP_NAME: '{{form.pipeline.parameters.prod-app-name}}'
